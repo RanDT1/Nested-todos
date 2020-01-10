@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Nested Todos</title>
+    <link rel="stylesheet" href="C:\Users\relid\Desktop\New stuff\School\Watch and code\Watch and code premium content\Beasts\RecursiveTodoList\css\index.css">
+  </head>
+  <body>
+    <section>
+      <header>
+        <h1>Nested Todo List</h1>
+      </header>
+      <section>
+        <ul id='todo-list'>
+        </ul>
+      </section>
+      <div>
+        <input id = "newTodoButton"  type="button" value ="Add todo" >
+        <input id = "clearCompleted" type="button"  value="Clear completed">
+      </div>
+    </section>
+    <script id="list-template" type="text/x-handlebars-template">
+      {{#each todos}}
+      <li {{#if completed}}class="completed"{{/if}} data-id="{{id}}">
+        <div class="view">
+          <input class="toggle" type="checkbox" {{#if completed}}checked{{/if}} >
+          <label  contenteditable="true">{{#eq newInput true}} <input class="new-todo" placeholder="What needs to be done?" autofocust > {{else}} {{title}} {{/eq}}</label>
+          <button class="destroy"></button>
+        </div>
+        {{#if todos}}
+        <ul>
+          {{> list}}
+        </ul>
+        {{/if}}
+      </li>
+      {{/each}}
+    </script>
+    <script id ="main-ul" type="text/x-handlebars-template">
+      {{> list}}
+    </script>
+    <script src="C:\Users\relid\Desktop\New stuff\School\Watch and code\Watch and code premium content\Beasts\RecursiveTodoList\public\js\handlebars-v4.4.3.js"></script>
+    <script src="C:\Users\relid\Desktop\New stuff\School\Watch and code\Watch and code premium content\Beasts\RecursiveTodoList\public\js\app.js"></script>
+  </body>
+</html>
