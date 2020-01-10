@@ -19,6 +19,10 @@
         <input id = "clearCompleted" type="button"  value="Clear completed">
       </div>
     </section>
+    <section>
+      <p><small>Tab to Indent current to do list item.</small></p>
+      <p><small>Simply click to do list item to edit.</small></p>
+    </section>
     <script id="list-template" type="text/x-handlebars-template">
       {{#each todos}}
       <li {{#if completed}}class="completed"{{/if}} data-id="{{id}}">
